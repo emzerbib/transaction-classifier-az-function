@@ -133,3 +133,8 @@ __blobstorage__
 __queuestorage__
 __azurite_db*__.json
 .python_packages
+
+# test files
+.test.py
+test.py
+convert_to_onnx.py
