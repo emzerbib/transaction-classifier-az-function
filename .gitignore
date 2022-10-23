@@ -135,6 +135,7 @@ __azurite_db*__.json
 .python_packages
 
 # test files
+testing
 .test.py
 test.py
 test?*.py
