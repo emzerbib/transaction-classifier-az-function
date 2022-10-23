@@ -1,0 +1,1 @@
+{"client": {"amount_range": [15, 780], "tag_choices": ["delivery", "bulk purchase", "G_dist"], "hour_range": [10, 18]}, "supplier": {"amount_range": [2400, 18000], "tag_choices": ["ABC_inc", "XYZ_inc", "AAA_&_BBB"], "hour_range": [6, 21]}, "tax": {"amount_range": [900, 35000], "tag_choices": ["CPAM", "ARC", "RevenuQc"], "hour_range": [0, 1]}}

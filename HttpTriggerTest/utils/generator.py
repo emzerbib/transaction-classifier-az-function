@@ -1,24 +1,9 @@
 from HttpTriggerTest.utils.columns import Columns
 from HttpTriggerTest.utils.models import TransactionInput, TransactionType
-import random
+import random, json
 
-PARAMETER_DICT = {
-        Columns.CLIENT: {
-            Columns.AMOUNT_RANGE: (15, 780),
-            Columns.TAG_CHOICES: ('delivery', 'bulk purchase', 'G_dist'),
-            Columns.HOUR_RANGE: (10, 18)
-            },
-        Columns.SUPPLIER: {
-            Columns.AMOUNT_RANGE: (2400, 18000),
-            Columns.TAG_CHOICES: ('ABC_inc', 'XYZ_inc', 'AAA_&_BBB'),
-            Columns.HOUR_RANGE: (6, 21)
-            },
-        Columns.TAX: {
-            Columns.AMOUNT_RANGE: (900, 35000),
-            Columns.TAG_CHOICES: ('CPAM', 'ARC', 'RevenuQc'),
-            Columns.HOUR_RANGE: (0, 1)
-            }
-            }
+with open("HttpTriggerTest/utils/reference/transaction_param.json") as json_file:
+    PARAMETER_DICT = json.load(json_file)
 
 def generate_transactionInput(transaction_type: TransactionType) -> TransactionInput:
     """returns a TransactionInput object of type transaction_type with random features"""
