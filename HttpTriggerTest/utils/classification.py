@@ -1,5 +1,6 @@
 import pickle
 import numpy as np
+import os
 from HttpTriggerTest.utils.models import TransactionInput
 
 classifier_path = "HttpTriggerTest/utils/transformers/classifier.sav"
@@ -8,7 +9,8 @@ vectorizer_path = "HttpTriggerTest/utils/transformers/word_vectorizer.sav"
 loaded_model = pickle.load(open(classifier_path, 'rb'))
 loaded_vectorizer = pickle.load(open(vectorizer_path, 'rb'))
 
-N_FEATURES = 13
+N_FEATURES = int(os.environ.get("N_FEATURES"))
+
 
 def process_tag(tag: str):
     """converts a tag into an array of word features for classification"""
