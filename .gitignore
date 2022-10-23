@@ -137,4 +137,4 @@ __azurite_db*__.json
 # test files
 .test.py
 test.py
-convert_to_onnx.py
+test?*.py
