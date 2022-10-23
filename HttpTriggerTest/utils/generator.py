@@ -1,5 +1,5 @@
-from .columns import Columns
-from .models import TransactionInput, TransactionType
+from HttpTriggerTest.utils.columns import Columns
+from HttpTriggerTest.utils.models import TransactionInput, TransactionType
 import random
 
 PARAMETER_DICT = {
@@ -20,8 +20,8 @@ PARAMETER_DICT = {
             }
             }
 
-def generate_transactionInput(transaction_type: TransactionType):
-
+def generate_transactionInput(transaction_type: TransactionType) -> TransactionInput:
+    """returns a TransactionInput object of type transaction_type with random features"""
     parameters = {
         Columns.AMOUNT : random.randint(*PARAMETER_DICT[transaction_type][Columns.AMOUNT_RANGE]),
         Columns.TAG : random.choice(PARAMETER_DICT[transaction_type][Columns.TAG_CHOICES]),
